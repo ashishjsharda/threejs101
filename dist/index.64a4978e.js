@@ -579,6 +579,12 @@ var _three = require("three");
 const renderer = new _three.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+const SCENE = new _three.Scene();
+const CAMERA = new _three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const axesHelper = new _three.AxesHelper(5);
+SCENE.add(axesHelper);
+CAMERA.position.z = 5;
+renderer.render(SCENE, CAMERA);
 
 },{"three":"ktPTu"}],"ktPTu":[function(require,module,exports) {
 /**
